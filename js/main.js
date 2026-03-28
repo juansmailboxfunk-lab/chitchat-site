@@ -1,97 +1,94 @@
 (function () {
-  const yearEl = document.getElementById('year');
-  const yearEnEl = document.getElementById('year-en');
-  const currentYear = String(new Date().getFullYear());
-  if (yearEl) yearEl.textContent = currentYear;
-  if (yearEnEl) yearEnEl.textContent = currentYear;
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = String(new Date().getFullYear());
+  }
 
-  const langButtons = document.querySelectorAll('.lang-btn');
-  const langNodes = document.querySelectorAll('[data-lang-content]');
+  const navToggle = document.querySelector(".nav-toggle");
+  const siteNav = document.querySelector(".site-nav");
+  const navLinks = document.querySelectorAll(".nav-link");
 
-  function setLanguage(lang) {
-    document.documentElement.lang = lang;
-    langNodes.forEach((node) => {
-      node.hidden = node.getAttribute('data-lang-content') !== lang;
-    });
-    langButtons.forEach((button) => {
-      const isActive = button.getAttribute('data-lang') === lang;
-      button.classList.toggle('is-active', isActive);
-      button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+  function setActiveLink(activeId) {
+    navLinks.forEach(function (link) {
+      const isActive = link.getAttribute("href") === "#" + activeId;
+      link.classList.toggle("is-active", isActive);
+      if (isActive) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
     });
   }
 
-  langButtons.forEach((button) => {
-    button.addEventListener('click', function () {
-      setLanguage(button.getAttribute('data-lang') || 'es');
-    });
-  });
-
-  setLanguage('es');
-
-  const modalTriggers = document.querySelectorAll('.service-more');
-  const modalCloseButtons = document.querySelectorAll('[data-modal-close]');
-  let activeModal = null;
-  let lastTrigger = null;
-
-  function closeModal() {
-    if (!activeModal) return;
-    activeModal.hidden = true;
-    activeModal.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('modal-open');
-    if (lastTrigger) lastTrigger.focus();
-    activeModal = null;
-    lastTrigger = null;
+  function closeMenu() {
+    if (!navToggle || !siteNav) return;
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Abrir menú");
+    siteNav.classList.remove("is-open");
   }
 
-  function openModal(modal, trigger) {
-    activeModal = modal;
-    lastTrigger = trigger;
-    modal.hidden = false;
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('modal-open');
-    const panel = modal.querySelector('.modal__panel');
-    if (panel) panel.focus();
+  if (navToggle && siteNav) {
+    navToggle.addEventListener("click", function () {
+      const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", isOpen ? "false" : "true");
+      navToggle.setAttribute("aria-label", isOpen ? "Abrir menú" : "Cerrar menú");
+      siteNav.classList.toggle("is-open", !isOpen);
+    });
+
+    navLinks.forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!siteNav.contains(event.target) && !navToggle.contains(event.target)) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 820) {
+        closeMenu();
+      }
+    });
   }
 
-  modalTriggers.forEach((trigger) => {
-    trigger.addEventListener('click', function () {
-      const modalId = trigger.getAttribute('data-modal');
-      if (!modalId) return;
-      const modal = document.getElementById(modalId);
-      if (!modal) return;
-      openModal(modal, trigger);
-    });
-  });
+  const sections = document.querySelectorAll("[data-section]");
+  if (sections.length && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
 
-  modalCloseButtons.forEach((button) => {
-    button.addEventListener('click', closeModal);
-  });
-
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') closeModal();
-  });
-
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('[data-spy-section]');
-  if (sections.length && 'IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(function (entries) {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach((link) => {
-          const isMatch = link.getAttribute('href') === `#${id}`;
-          link.classList.toggle('is-active', isMatch);
+          const activeId = entry.target.getAttribute("id");
+          setActiveLink(activeId);
         });
-      });
-    }, { rootMargin: '-35% 0px -45% 0px', threshold: 0.01 });
+      },
+      {
+        rootMargin: "-45% 0px -40% 0px",
+        threshold: 0.01
+      }
+    );
 
-    sections.forEach((section) => observer.observe(section));
+    sections.forEach(function (section) {
+      observer.observe(section);
+    });
   }
 
-  const contactForm = document.querySelector('.contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (event) {
+  const contactForm = document.querySelector(".contact-form");
+  const formStatus = document.querySelector(".form-status");
+
+  if (contactForm && formStatus) {
+    contactForm.addEventListener("submit", function (event) {
       event.preventDefault();
+      formStatus.classList.add("is-visible");
+      formStatus.textContent = "Gracias. Este formulario es una vista previa y todavía no envía mensajes.";
+      contactForm.reset();
     });
   }
 })();
