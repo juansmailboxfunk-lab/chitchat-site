@@ -1,43 +1,90 @@
-# Chit Chat — One-page site (HTML/CSS/JS)
+# ChitChat
 
-This zip contains a ready-to-run static site:
-- `index.html`
-- `css/style.css`
-- `js/main.js`
-- `images/` (placeholder SVGs you can replace with your final generated illustrations)
+Static bilingual one-page site built with plain HTML, CSS, and JavaScript.
 
-## How to run locally
-Just open `index.html` in your browser.
+## Project structure
 
-For best results (and to avoid some browser security limits), use a local server:
-- macOS: `python3 -m http.server 8080` (run inside the folder)
-- then open http://localhost:8080
+- `index.html`: main page markup, default Spanish fallback content, and default SEO metadata
+- `css/styles.css`: all site styles
+- `js/main.js`: bilingual translations, language toggle, modal behavior, active nav state, form preview message, and runtime SEO updates
+- `assets/illustrations/`: site illustrations and favicon source images
 
-## Replace the illustrations
-Replace any file inside `/images` with your final generated PNG/SVG, keeping the SAME filename.
+## Preview locally
 
-Key files:
-- `images/hero-desktop.svg` and `images/hero-mobile.svg`
-- `images/croc-services.svg`, `images/croc-booking.svg`, `images/croc-about.svg`, `images/croc-contact.svg`
-- `images/croc-faq-left.svg` and `images/croc-faq-right.svg`
-- Overlay crocs: `images/croc-overlay-*.svg`
+You can open `index.html` directly in a browser.
 
-If you export PNGs, just rename them to match and update the `.svg` extension in `index.html` if you prefer.
+For a closer deployment-style preview, run a local server from the project folder:
 
-## Service pop-up (overlay)
-Each “Más información” button has:
-- `data-title`, `data-subtitle`, `data-content` (HTML), `data-theme`, `data-croc`
+```bash
+python3 -m http.server 8080
+```
 
-Edit those attributes in `index.html` to change the overlay content per service.
+Then open `http://localhost:8080`.
 
-## Contact form
-Currently shows a demo alert.
-To make it send messages, easiest option is Formspree:
-1. Create a Formspree form and get the endpoint URL.
-2. Add `action="YOUR_URL" method="POST"` to the `<form id="contactForm">`.
-3. Remove the demo alert handler in `js/main.js` (or adjust it to submit via fetch).
+## Where to edit copy
 
-## Deploy (GitHub Pages)
-1. Create a repo and upload the files.
-2. Enable GitHub Pages (Settings → Pages) with branch `main` and folder `/root`.
-3. Your site will be live at your GitHub Pages URL.
+Main bilingual copy lives in `js/main.js` inside:
+
+- `translations.es`
+- `translations.en`
+
+That includes:
+
+- navigation
+- hero
+- services cards and shared modal
+- about section
+- reviews section
+- contact section
+- footer
+- runtime SEO metadata
+
+Default Spanish fallback text is also present in `index.html` so the page is readable before JavaScript runs. If you change important Spanish text in `js/main.js`, keep the matching fallback text in `index.html` in sync.
+
+## Where to update contact details
+
+The remaining real-world placeholders are in two places:
+
+1. `index.html`
+   - contact form block
+   - contact details list
+2. `js/main.js`
+   - `translations.es.contact.details`
+   - `translations.en.contact.details`
+
+The following values still need real final details before launch:
+
+- phone number
+- email address
+- registration number
+
+The form is currently a preview only. The message shown after submit is controlled by:
+
+- `translations.es.ui.formPreviewMessage`
+- `translations.en.ui.formPreviewMessage`
+
+If you connect the form to a real backend later, update the form `action`/submission logic and replace that preview message.
+
+## Where to update SEO metadata
+
+Default Spanish metadata is in the `<head>` of `index.html`, including:
+
+- page title
+- meta description
+- Open Graph tags
+- Twitter card tags
+- favicon links
+
+Bilingual runtime metadata is in `js/main.js` inside:
+
+- `translations.es.meta`
+- `translations.en.meta`
+
+If you update titles, descriptions, or social copy, keep `index.html` and the matching `meta` translation entries aligned.
+
+## Deployment notes
+
+- Spanish is the default language.
+- The English version is controlled by the existing in-page language toggle.
+- Canonical URL and `og:url` are only set at runtime when the page is served over HTTP(S).
+- No separate privacy/legal pages are included in this repo yet.

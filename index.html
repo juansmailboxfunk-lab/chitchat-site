@@ -3,18 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ChitChat | Logopedia para niños y familias</title>
-  <meta name="description" content="ChitChat ofrece logopedia para niños y familias con sesiones personalizadas, cercanas y basadas en el juego.">
+  <!-- Keep the default Spanish metadata below aligned with translations.es.meta in js/main.js. -->
+  <title>ChitChat | Logopedia infantil para niños y familias</title>
+  <meta name="description" content="ChitChat ofrece logopedia infantil con sesiones personalizadas, cercanas y basadas en el juego para niños y familias.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="application-name" content="ChitChat">
+  <meta name="apple-mobile-web-app-title" content="ChitChat">
+  <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#fff9f1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ChitChat">
+  <meta property="og:title" content="ChitChat | Logopedia infantil para niños y familias">
+  <meta property="og:description" content="ChitChat ofrece logopedia infantil con sesiones personalizadas, cercanas y basadas en el juego para niños y familias.">
+  <meta property="og:image" content="assets/illustrations/crocodile-chitchat-hero.png">
+  <meta property="og:image:width" content="1536">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:image:alt" content="Ilustración principal de ChitChat para niños y familias">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ChitChat | Logopedia infantil para niños y familias">
+  <meta name="twitter:description" content="ChitChat ofrece logopedia infantil con sesiones personalizadas, cercanas y basadas en el juego para niños y familias.">
+  <meta name="twitter:image" content="assets/illustrations/crocodile-chitchat-hero.png">
+  <meta name="twitter:image:alt" content="Ilustración principal de ChitChat para niños y familias">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;600;700;800&family=Red+Hat+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/illustrations/crocodile-mini-icon.png" type="image/png">
+  <link rel="shortcut icon" href="assets/illustrations/crocodile-mini-icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/illustrations/crocodile-mini-icon.png">
   <link rel="stylesheet" href="css/styles.css?v=4">
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <a class="skip-link" href="#contenido" data-i18n="ui.skipLink">Saltar al contenido</a>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#inicio" aria-label="Ir al inicio de ChitChat">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio de ChitChat" data-i18n-aria-label="nav.brandAria">
         <img src="assets/illustrations/crocodile-mini-icon.png" alt="Icono de ChitChat" width="44" height="44">
         <span class="brand-name">ChitChat</span>
       </a>
@@ -25,35 +50,42 @@
         <span></span>
       </button>
 
-      <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+      <nav class="site-nav" id="site-nav" aria-label="Navegación principal" data-i18n-aria-label="nav.mainAria">
         <ul>
-          <li><a class="nav-link is-active" href="#inicio">Inicio</a></li>
-          <li><a class="nav-link" href="#servicios">Servicios</a></li>
-          <li><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
-          <li><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li><a class="nav-link is-active" href="#inicio" data-i18n="nav.home">Inicio</a></li>
+          <li><a class="nav-link" href="#servicios" data-i18n="nav.services">Servicios</a></li>
+          <li><a class="nav-link" href="#sobre-mi" data-i18n="nav.about">Sobre mí</a></li>
+          <li><a class="nav-link" href="#contacto" data-i18n="nav.contact">Contacto</a></li>
         </ul>
-        <a class="button button-small nav-cta" href="#contacto">Contactar</a>
+        <a class="button button-small nav-cta" href="#contacto" data-i18n="nav.cta">Contactar</a>
+        <div class="language-toggle" role="group" aria-label="Selector de idioma" data-i18n-aria-label="ui.languageToggle">
+          <button class="lang-button is-active" type="button" data-language-toggle="es" lang="es" aria-pressed="true">ES</button>
+          <button class="lang-button" type="button" data-language-toggle="en" lang="en" aria-pressed="false">EN</button>
+        </div>
       </nav>
     </div>
   </header>
 
   <main id="contenido">
     <section class="hero" id="inicio" data-section>
-      <div class="hero-overlay" aria-hidden="true"></div>
       <div class="container hero-content">
+        <figure class="hero-figure">
+          <img src="assets/illustrations/crocodile-chitchat-hero.png" alt="Ilustración principal de ChitChat para niños y familias" width="1536" height="1024" fetchpriority="high" decoding="async" data-i18n-alt="hero.imageAlt">
+        </figure>
+
         <div class="hero-panel">
-          <p class="hero-kicker">Espacio terapéutico infantil</p>
+          <p class="hero-kicker" data-i18n="hero.kicker">Espacio terapéutico infantil</p>
           <h1>ChitChat</h1>
-          <p class="hero-subtitle">Logopedia para niños y familias</p>
-          <p class="hero-text">Sesiones personalizadas, cercanas y basadas en el juego para acompañar el desarrollo del habla, el lenguaje y la comunicación.</p>
-          <div class="hero-notes" aria-label="Áreas principales">
-            <span>Atención temprana</span>
-            <span>Neurodesarrollo</span>
-            <span>Trabajo con familias</span>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">Logopedia para niños y familias</p>
+          <p class="hero-text" data-i18n="hero.text">Sesiones personalizadas, cercanas y basadas en el juego para acompañar el desarrollo del habla, el lenguaje y la comunicación.</p>
+          <div class="hero-notes" aria-label="Áreas principales" data-i18n-aria-label="hero.notesAria">
+            <span data-i18n="hero.noteEarly">Atención temprana</span>
+            <span data-i18n="hero.noteNeuro">Neurodesarrollo</span>
+            <span data-i18n="hero.noteFamilies">Trabajo con familias</span>
           </div>
           <div class="hero-actions">
-            <a href="#contacto" class="button hero-button">Contactar</a>
-            <a href="#servicios" class="button button-secondary">Ver servicios</a>
+            <a href="#contacto" class="button hero-button" data-i18n="hero.primaryCta">Contactar</a>
+            <a href="#servicios" class="button button-secondary" data-i18n="hero.secondaryCta">Ver servicios</a>
           </div>
         </div>
       </div>
@@ -62,94 +94,79 @@
     <section class="section" id="servicios" data-section>
       <div class="container">
         <div class="section-heading">
-          <p class="section-eyebrow">Acompañamiento personalizado</p>
-          <h2>Servicios</h2>
-          <p>Un enfoque cercano, flexible y coordinado para acompañar a cada niño, a su familia y a los entornos que forman parte de su día a día.</p>
+          <p class="section-eyebrow" data-i18n="services.eyebrow">Acompañamiento personalizado</p>
+          <h2 data-i18n="services.heading">Servicios</h2>
+          <p class="services-intro" data-i18n="services.intro">En ChitChat ofrecemos sesiones personalizadas para niños y sus familias, adaptadas a las necesidades de cada etapa del desarrollo. Trabajamos desde el juego, la evidencia y la colaboración con el entorno del niño para construir objetivos funcionales y realistas.</p>
         </div>
 
-        <div class="summary-grid" aria-label="Puntos clave de ChitChat">
-          <article class="summary-card">
-            <h3>Sesiones personalizadas</h3>
-            <p>Objetivos pensados para cada niño, con propuestas adaptadas a su momento evolutivo y a las prioridades de la familia.</p>
+        <div class="services-grid" aria-label="Servicios principales de ChitChat" data-i18n-aria-label="services.gridAria">
+          <article class="service-card" data-service-card="estimulación-temprana">
+            <figure class="service-card__media">
+              <img src="assets/illustrations/crocodile-early-intervention.png" alt="Ilustración de estimulación temprana y juego inicial" width="1536" height="1024" loading="lazy" decoding="async" data-service-image>
+            </figure>
+            <h3 data-service-title>Estimulación temprana (0–3 años)</h3>
+            <p data-service-preview>Acompañamiento en los primeros años para favorecer la comunicación, el lenguaje y la interacción desde el juego y el vínculo con la familia.</p>
+            <button class="button button-secondary service-button" type="button" data-service-open data-service-id="estimulación-temprana" data-service-button aria-haspopup="dialog" aria-controls="service-modal">Más información</button>
           </article>
 
-          <article class="summary-card">
-            <h3>Trabajo coordinado</h3>
-            <p>Una intervención que puede incluir a familia, colegio y otros profesionales para mantener objetivos útiles en la vida diaria.</p>
+          <article class="service-card" data-service-card="comunicación-y-lenguaje">
+            <figure class="service-card__media">
+              <img src="assets/illustrations/crocodile-language.png" alt="Ilustración de comunicación y lenguaje infantil" width="1536" height="1024" loading="lazy" decoding="async" data-service-image>
+            </figure>
+            <h3 data-service-title>Comunicación y lenguaje (a partir de 4 años)</h3>
+            <p data-service-preview>Apoyo para niños que tienen dificultades para expresarse, comprender, conversar o desarrollar el lenguaje de forma funcional en su día a día.</p>
+            <button class="button button-secondary service-button" type="button" data-service-open data-service-id="comunicación-y-lenguaje" data-service-button aria-haspopup="dialog" aria-controls="service-modal">Más información</button>
           </article>
 
-          <article class="summary-card">
-            <h3>Español e inglés</h3>
-            <p>Acompañamiento en ambos idiomas cuando el contexto familiar o escolar lo necesita, sin perder naturalidad ni funcionalidad.</p>
+          <article class="service-card" data-service-card="habla-fonemas-y-articulación">
+            <figure class="service-card__media">
+              <img src="assets/illustrations/crocodile-articulation.png" alt="Ilustración de habla, sonidos y articulación" width="1536" height="1024" loading="lazy" decoding="async" data-service-image>
+            </figure>
+            <h3 data-service-title>Habla, fonemas y articulación</h3>
+            <p data-service-preview>Intervención en dificultades de pronunciación, articulación y claridad del habla para que el niño se comunique con mayor seguridad.</p>
+            <button class="button button-secondary service-button" type="button" data-service-open data-service-id="habla-fonemas-y-articulación" data-service-button aria-haspopup="dialog" aria-controls="service-modal">Más información</button>
+          </article>
+
+          <article class="service-card" data-service-card="alimentación-oral-infantil">
+            <figure class="service-card__media">
+              <img src="assets/illustrations/crocodile-feeding.png" alt="Ilustración de alimentación oral infantil" width="1536" height="1024" loading="lazy" decoding="async" data-service-image>
+            </figure>
+            <h3 data-service-title>Alimentación oral infantil</h3>
+            <p data-service-preview>Apoyo en dificultades relacionadas con la alimentación, la aceptación de texturas, la masticación o el uso funcional de la boca.</p>
+            <button class="button button-secondary service-button" type="button" data-service-open data-service-id="alimentación-oral-infantil" data-service-button aria-haspopup="dialog" aria-controls="service-modal">Más información</button>
+          </article>
+
+          <article class="service-card" data-service-card="acompañamiento-en-neurodiversidad">
+            <figure class="service-card__media">
+              <img src="assets/illustrations/crocodile-neurodiversity.png" alt="Ilustración de acompañamiento en neurodiversidad" width="1536" height="1024" loading="lazy" decoding="async" data-service-image>
+            </figure>
+            <h3 data-service-title>Acompañamiento en neurodiversidad</h3>
+            <p data-service-preview>Intervención centrada en el niño y su entorno cuando existen perfiles de desarrollo diverso o diagnósticos asociados.</p>
+            <button class="button button-secondary service-button" type="button" data-service-open data-service-id="acompañamiento-en-neurodiversidad" data-service-button aria-haspopup="dialog" aria-controls="service-modal">Más información</button>
+          </article>
+
+          <article class="service-card" data-service-card="orientación-y-acompañamiento-a-familias">
+            <figure class="service-card__media">
+              <img src="assets/illustrations/crocodile-family.png" alt="Ilustración de apoyo y acompañamiento a familias" width="1536" height="1024" loading="lazy" decoding="async" data-service-image>
+            </figure>
+            <h3 data-service-title>Orientación y acompañamiento a familias</h3>
+            <p data-service-preview>Espacio para orientar, resolver dudas y dar herramientas prácticas a las familias en cada etapa del proceso terapéutico.</p>
+            <button class="button button-secondary service-button" type="button" data-service-open data-service-id="orientación-y-acompañamiento-a-familias" data-service-button aria-haspopup="dialog" aria-controls="service-modal">Más información</button>
           </article>
         </div>
 
-        <div class="feature-stack">
-          <article class="feature-card feature-card--children">
-            <div class="feature-media">
-              <img src="assets/illustrations/crocodile-early-intervention.png" alt="Ilustración de un cocodrilo acompañando a una niña en una sesión de logopedia" loading="lazy" decoding="async">
+        <div class="service-modal" id="service-modal" hidden>
+          <div class="service-modal__backdrop" data-modal-close></div>
+          <div class="service-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="service-modal-title" aria-describedby="service-modal-body" tabindex="-1">
+            <button class="service-modal__close" type="button" aria-label="Cerrar información del servicio" data-i18n-aria-label="ui.serviceModalClose" data-modal-close>
+              <span aria-hidden="true">×</span>
+            </button>
+            <div class="service-modal__content">
+              <p class="service-modal__eyebrow" data-i18n="services.modalEyebrow">Servicios</p>
+              <h3 id="service-modal-title"></h3>
+              <div class="service-modal__body" id="service-modal-body"></div>
             </div>
-            <div class="feature-copy">
-              <p class="feature-label">Para niños</p>
-              <h3>Para niños</h3>
-              <p>¿A tu hija le cuesta expresarse con palabras, se pierde en conversaciones sencillas o tiene dificultad para adquirir conceptos nuevos?</p>
-              <p>¿Tiene problemas de socialización fuera del núcleo familiar o le cuesta jugar con otros niños?</p>
-              <p>¿Muestra tu hijo dificultades de aprendizaje en el cole en la adquisición de conceptos matemáticos o con la lectoescritura?</p>
-              <p>La logopedia ofrece soluciones concretas para cada una de estas situaciones. En ChitChat ofrecemos sesiones personalizadas para cada niña y su familia. Juntos decidimos los objetivos y adaptamos la terapia a las necesidades de cada uno.</p>
-            </div>
-          </article>
-
-          <article class="feature-card feature-card--reverse feature-card--neuro">
-            <div class="feature-media">
-              <img src="assets/illustrations/crocodile-neurodiversity.png" alt="Ilustración de un cocodrilo acompañando a un niño con necesidades de neurodesarrollo" loading="lazy" decoding="async">
-            </div>
-            <div class="feature-copy">
-              <p class="feature-label">Neurodesarrollo</p>
-              <h3>Neurodesarrollo</h3>
-              <p>En algunos casos, las dificultades del niño con respecto a la socialización, el habla, el lenguaje, el aprendizaje o la lectoescritura tienen asociado un diagnóstico determinado como Trastorno del Espectro Autista (TEA), Trastorno Específico de Lenguaje (TEL), Trastorno por Déficit de Atención de Hiperactividad (TDAH), Trastorno Global del Desarrollo (TGD), Dispraxia, Dislexia…</p>
-              <p>En ChitChat hacemos a los niños el centro de la terapia. Los objetivos de las sesiones nacen de ellos e involucran a la familia, a la terapeuta y otros especialistas para crear una terapia multidisciplinar que proporcione herramientas que ayuden a afrontar estas dificultades.</p>
-            </div>
-          </article>
-
-          <article class="feature-card feature-card--schools">
-            <div class="feature-media">
-              <img src="assets/illustrations/crocodile-language.png" alt="Ilustración de un cocodrilo trabajando lenguaje y comunicación con una niña" loading="lazy" decoding="async">
-            </div>
-            <div class="feature-copy">
-              <p class="feature-label">Colegios</p>
-              <h3>Colegios</h3>
-              <p>En los colegios existen equipos de orientación que evalúan, asesoran, realizan intervención especializada y apoyan un desarrollo integral del alumnado. Cuando un niño trabaja con ChitChat tanto el equipo docente como el de orientación forman parte de su plan personalizado de terapia.</p>
-              <p>ChitChat mantiene una relación fluida con el colegio para asegurar así objetivos funcionales en todos los ámbitos.</p>
-            </div>
-          </article>
-
-          <article class="feature-card feature-card--reverse feature-card--formats">
-            <div class="feature-media">
-              <img src="assets/illustrations/crocodile-faq.png" alt="Ilustración de un cocodrilo ofreciendo información a familias sobre distintos formatos de terapia" loading="lazy" decoding="async">
-            </div>
-            <div class="feature-copy">
-              <p class="feature-label">Formatos de trabajo</p>
-              <h3>Grupos, online e inglés</h3>
-              <p>ChitChat se adapta a las necesidades de cada familia con distintos formatos de apoyo para ampliar el acceso, la continuidad y la comodidad del proceso terapéutico.</p>
-
-              <div class="mini-grid">
-                <article class="mini-card">
-                  <h4>Grupos</h4>
-                  <p>Desde ChitChat consideramos que la terapia en grupo favorece el aprendizaje, la autoestima y el desarrollo social. Esto resulta imprescindible para la mejora de ámbitos como el habla, la expresión oral, la comprensión, la interacción social o la interacción familiar.</p>
-                </article>
-
-                <article class="mini-card">
-                  <h4>Online</h4>
-                  <p>ChitChat ofrece sesiones online para esas familias que no tienen la posibilidad de desplazarse al centro. Se puede combinar con terapia presencial o ser exclusivamente online.</p>
-                </article>
-
-                <article class="mini-card">
-                  <h4>Inglés</h4>
-                  <p>ChitChat ofrece todos sus servicios tanto en español como en inglés. Para familias bilingües es importante el trabajo en su propia lengua materna al igual que para los alumnos de colegios bilingües es importante poder comunicarse y desarrollarse en ese segundo idioma.</p>
-                </article>
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
@@ -157,31 +174,31 @@
     <section class="section section-soft" id="sobre-mi" data-section>
       <div class="container about-grid">
         <figure class="illustration-panel">
-          <img src="assets/illustrations/crocodile-about.png" alt="Ilustración del enfoque cercano y creativo de ChitChat" loading="lazy" decoding="async">
+          <img src="assets/illustrations/crocodile-about.png" alt="Ilustración del enfoque cercano y creativo de ChitChat" width="1536" height="1024" loading="lazy" decoding="async" data-i18n-alt="about.imageAlt">
         </figure>
 
         <div class="about-copy">
           <div class="section-heading section-heading--left">
-            <p class="section-eyebrow">Una terapia cercana y respetuosa</p>
-            <h2>Sobre mí</h2>
-            <p>Experiencia clínica, trabajo bilingüe y una mirada centrada en el desarrollo natural de cada niño.</p>
-            <p class="about-signature">Amaya Dunworth · Logopeda infantil</p>
+            <p class="section-eyebrow" data-i18n="about.eyebrow">Una terapia cercana y respetuosa</p>
+            <h2 data-i18n="about.heading">Sobre mí</h2>
+            <p data-i18n="about.intro">Experiencia clínica, trabajo bilingüe y una mirada centrada en el desarrollo natural de cada niño.</p>
+            <p class="about-signature" data-i18n="about.signature">Amaya Dunworth · Logopeda infantil</p>
           </div>
 
           <div class="about-panels">
             <article class="about-card">
-              <h3>Quién soy</h3>
-              <p>Mi nombre es Amaya Dunworth. Soy logopeda especialista en atención temprana y niños en edad escolar. Me licencié en la Universidad de Cork (Irlanda) y además tengo formación en métodos Hanen.</p>
+              <h3 data-i18n="about.cards.who.title">Quién soy</h3>
+              <p data-i18n="about.cards.who.text">Mi nombre es Amaya Dunworth. Soy logopeda especialista en atención temprana y niños en edad escolar. Me licencié en la Universidad de Cork (Irlanda) y además tengo formación en métodos Hanen.</p>
             </article>
 
             <article class="about-card">
-              <h3>Qué hago</h3>
-              <p>En mi vida profesional he trabajado con niños con dificultades del desarrollo en el Sistema de Salud en Irlanda (HSE) y en diversos equipos de Atención Temprana en España. Esto es lo que me permite llevar a cabo mi trabajo de logopeda en ambos idiomas.</p>
+              <h3 data-i18n="about.cards.what.title">Qué hago</h3>
+              <p data-i18n="about.cards.what.text">En mi vida profesional he trabajado con niños con dificultades del desarrollo en el Sistema de Salud en Irlanda (HSE) y en diversos equipos de Atención Temprana en España. Esto es lo que me permite llevar a cabo mi trabajo de logopeda en ambos idiomas.</p>
             </article>
 
             <article class="about-card">
-              <h3>Cómo lo hago</h3>
-              <p>Mi visión de la terapia en logopedia parte del respeto al desarrollo natural del niño y la importancia del trabajo con la familia puesto que supone su núcleo vital más cercano. Así, desde la comprensión de cada situación particular, diseño sesiones personalizadas, creativas y basadas en el juego que fomentan el desarrollo de cada individuo.</p>
+              <h3 data-i18n="about.cards.how.title">Cómo lo hago</h3>
+              <p data-i18n="about.cards.how.text">Mi visión de la terapia en logopedia parte del respeto al desarrollo natural del niño y la importancia del trabajo con la familia puesto que supone su núcleo vital más cercano. Así, desde la comprensión de cada situación particular, diseño sesiones personalizadas, creativas y basadas en el juego que fomentan el desarrollo de cada individuo.</p>
             </article>
           </div>
         </div>
@@ -191,25 +208,25 @@
     <section class="section" id="resenas">
       <div class="container">
         <div class="section-heading">
-          <p class="section-eyebrow">Espacio preparado para crecer</p>
-          <h2>Reseñas</h2>
-          <p>Una sección sencilla y lista para incorporar testimonios reales cuando quieras añadirlos.</p>
+          <p class="section-eyebrow" data-i18n="reviews.eyebrow">Espacio preparado para crecer</p>
+          <h2 data-i18n="reviews.heading">Reseñas</h2>
+          <p data-i18n="reviews.intro">Una sección sencilla y lista para incorporar testimonios reales cuando quieras añadirlos.</p>
         </div>
 
         <div class="reviews-grid">
           <article class="review-card">
-            <p class="review-tag">Próximamente</p>
-            <p>Este espacio está reservado para compartir opiniones reales de familias sobre el acompañamiento recibido en ChitChat.</p>
+            <p class="review-tag" data-i18n="reviews.cards.one.tag">Próximamente</p>
+            <p data-i18n="reviews.cards.one.text">Este espacio está reservado para compartir opiniones reales de familias sobre el acompañamiento recibido en ChitChat.</p>
           </article>
 
           <article class="review-card">
-            <p class="review-tag">Próximamente</p>
-            <p>Aquí se podrán añadir reseñas breves sobre sesiones individuales, coordinación con la familia y evolución en objetivos cotidianos.</p>
+            <p class="review-tag" data-i18n="reviews.cards.two.tag">Próximamente</p>
+            <p data-i18n="reviews.cards.two.text">Aquí se podrán añadir reseñas breves sobre sesiones individuales, coordinación con la familia y evolución en objetivos cotidianos.</p>
           </article>
 
           <article class="review-card">
-            <p class="review-tag">Próximamente</p>
-            <p>También queda preparado para incluir experiencias relacionadas con terapia grupal, trabajo con colegios y sesiones online.</p>
+            <p class="review-tag" data-i18n="reviews.cards.three.tag">Próximamente</p>
+            <p data-i18n="reviews.cards.three.text">También queda preparado para incluir experiencias relacionadas con terapia grupal, trabajo con colegios y sesiones online.</p>
           </article>
         </div>
       </div>
@@ -219,69 +236,71 @@
       <div class="container contact-grid">
         <div class="contact-panel">
           <div class="section-heading section-heading--left">
-            <p class="section-eyebrow">Primer contacto</p>
-            <h2>Contacto</h2>
-            <p>Cuéntame un poco sobre vuestra situación y preparo la mejor forma de acompañaros.</p>
+            <p class="section-eyebrow" data-i18n="contact.eyebrow">Primer contacto</p>
+            <h2 data-i18n="contact.heading">Contacto</h2>
+            <p data-i18n="contact.intro">Cuéntame un poco sobre vuestra situación y preparo la mejor forma de acompañaros.</p>
           </div>
 
           <div class="contact-support-grid">
             <article class="contact-support-card">
-              <h3>Qué puedes contarme</h3>
-              <p>Edad, motivo de consulta, idioma habitual en casa y cualquier detalle que te ayude a explicar vuestra situación.</p>
+              <h3 data-i18n="contact.support.share.title">Qué puedes contarme</h3>
+              <p data-i18n="contact.support.share.text">Edad, motivo de consulta, idioma habitual en casa y cualquier detalle que te ayude a explicar vuestra situación.</p>
             </article>
 
             <article class="contact-support-card">
-              <h3>Cómo empieza el proceso</h3>
-              <p>Primer contacto, valoración inicial y una propuesta de acompañamiento adaptada a vuestro contexto familiar y escolar.</p>
+              <h3 data-i18n="contact.support.start.title">Cómo empieza el proceso</h3>
+              <p data-i18n="contact.support.start.text">Primer contacto, valoración inicial y una propuesta de acompañamiento adaptada a vuestro contexto familiar y escolar.</p>
             </article>
           </div>
 
+          <!-- This form is currently a preview only. Add the final form action or submission flow when ready. -->
           <form class="contact-form" action="#" method="post">
             <div class="form-grid">
               <label class="field" for="nombre">
-                <span>Nombre</span>
-                <input id="nombre" type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" required>
+                <span data-i18n="contact.form.nameLabel">Nombre</span>
+                <input id="nombre" type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" required data-i18n-placeholder="contact.form.namePlaceholder">
               </label>
 
               <label class="field" for="tel">
-                <span>Tel</span>
-                <input id="tel" type="tel" name="tel" placeholder="Tu teléfono" autocomplete="tel" inputmode="tel" required>
+                <span data-i18n="contact.form.phoneLabel">Teléfono</span>
+                <input id="tel" type="tel" name="tel" placeholder="Tu teléfono" autocomplete="tel" inputmode="tel" required data-i18n-placeholder="contact.form.phonePlaceholder">
               </label>
 
               <label class="field" for="email">
-                <span>Email</span>
-                <input id="email" type="email" name="email" placeholder="Tu correo electrónico" autocomplete="email" inputmode="email" required>
+                <span data-i18n="contact.form.emailLabel">Correo electrónico</span>
+                <input id="email" type="email" name="email" placeholder="Tu correo electrónico" autocomplete="email" inputmode="email" required data-i18n-placeholder="contact.form.emailPlaceholder">
               </label>
 
               <label class="field" for="edad">
-                <span>Edad del niño/niña</span>
-                <input id="edad" type="text" name="edad" placeholder="Por ejemplo: 4 años" autocomplete="off" required>
+                <span data-i18n="contact.form.childAgeLabel">Edad del niño/niña</span>
+                <input id="edad" type="text" name="edad" placeholder="Por ejemplo: 4 años" autocomplete="off" required data-i18n-placeholder="contact.form.childAgePlaceholder">
               </label>
             </div>
 
             <label class="field field-full" for="consulta">
-              <span>Consulta</span>
-              <textarea id="consulta" name="consulta" rows="6" placeholder="Cuéntame qué os preocupa o qué apoyo estáis buscando" required></textarea>
+              <span data-i18n="contact.form.inquiryLabel">Consulta</span>
+              <textarea id="consulta" name="consulta" rows="6" placeholder="Cuéntame qué os preocupa o qué apoyo estáis buscando" required data-i18n-placeholder="contact.form.inquiryPlaceholder"></textarea>
             </label>
 
-            <button type="submit" class="button">Enviar consulta</button>
+            <button type="submit" class="button" data-i18n="contact.form.submit">Enviar consulta</button>
             <p class="form-status" role="status" aria-live="polite"></p>
           </form>
 
           <div class="contact-details">
-            <h3>Datos de contacto</h3>
+            <h3 data-i18n="contact.details.heading">Datos de contacto</h3>
             <ul>
-              <li><strong>Dirección:</strong> Plaza del Pilar, 16, 1, derecha, Oficina 4</li>
-              <li><strong>Tel:</strong> Pendiente de añadir</li>
-              <li><strong>E-mail:</strong> Pendiente de añadir</li>
-              <li><strong>N° colegiada:</strong> Pendiente de añadir</li>
+              <!-- Replace the placeholder phone, email, and registration details below before final launch. -->
+              <li><strong data-i18n="contact.details.addressLabel">Dirección:</strong> <span data-i18n="contact.details.addressValue">Plaza del Pilar, 16, 1, derecha, Oficina 4</span></li>
+              <li><strong data-i18n="contact.details.phoneLabel">Teléfono:</strong> <span data-i18n="contact.details.phoneValue">Pendiente de confirmar</span></li>
+              <li><strong data-i18n="contact.details.emailLabel">Correo electrónico:</strong> <span data-i18n="contact.details.emailValue">Pendiente de confirmar</span></li>
+              <li><strong data-i18n="contact.details.licenseLabel">N° colegiada:</strong> <span data-i18n="contact.details.licenseValue">Pendiente de confirmar</span></li>
             </ul>
-            <p class="contact-note">Cuando tengas los datos definitivos, este bloque queda listo para sustituir los campos pendientes por la información real.</p>
+            <p class="contact-note" data-i18n="contact.details.note">Cuando tengas los datos definitivos, este bloque está listo para actualizarse con la información definitiva.</p>
           </div>
         </div>
 
         <figure class="illustration-panel contact-illustration">
-          <img src="assets/illustrations/crocodile-map.png" alt="Ilustración de un cocodrilo señalando la ubicación de la consulta" loading="lazy" decoding="async">
+          <img src="assets/illustrations/crocodile-map.png" alt="Ilustración de un cocodrilo señalando la ubicación de la consulta" width="1536" height="1024" loading="lazy" decoding="async" data-i18n-alt="contact.imageAlt">
         </figure>
       </div>
     </section>
@@ -289,8 +308,8 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> ChitChat. Logopedia para niños y familias.</p>
-      <a class="footer-link" href="#inicio">Volver arriba</a>
+      <p>© <span id="year"></span> <span data-i18n="footer.copy">ChitChat. Logopedia infantil para niños y familias.</span></p>
+      <a class="footer-link" href="#inicio" data-i18n="footer.backToTop">Volver arriba</a>
     </div>
   </footer>
 
